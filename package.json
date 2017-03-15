@@ -1,0 +1,22 @@
+{
+  "name": "credit-card-form",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.8",
+    "@types/react": "^15.0.16",
+    "@types/react-dom": "^0.14.23",
+    "react-scripts-typescript-scss": "0.9.19"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
