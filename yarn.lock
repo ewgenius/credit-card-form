@@ -16,6 +16,12 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-modal@^1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@types/react-modal/-/react-modal-1.6.4.tgz#54961d73d616a729df9f8cb94acafeddb074afe1"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^15.0.16":
   version "15.0.16"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.16.tgz#78e39511a9cfcabf7f74ecd55180522f4290a0c1"
@@ -1904,6 +1910,10 @@ electron-to-chromium@^1.1.0, electron-to-chromium@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.2.6.tgz#f38ad51d1919b06bc07275c62629db803ddca05a"
 
+element-class@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/element-class/-/element-class-0.2.2.tgz#9d3bbd0767f9013ef8e1c8ebe722c1402a60050e"
+
 elliptic@^6.0.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.0.tgz#cac9af8762c85836187003c8dfe193e5e2eae5df"
@@ -2226,6 +2236,10 @@ execa@^0.4.0:
     object-assign "^4.0.1"
     path-key "^1.0.0"
     strip-eof "^1.0.0"
+
+exenv@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.0.tgz#3835f127abf075bfe082d0aed4484057c78e3c89"
 
 exit-hook@^1.0.0:
   version "1.1.1"
@@ -5055,6 +5069,14 @@ react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-modal@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-1.7.3.tgz#9745448f280c92290ab1ab05c3d34ae708ef9ab3"
+  dependencies:
+    element-class "^0.2.0"
+    exenv "1.2.0"
+    lodash.assign "^4.2.0"
+
 react-scripts-typescript-scss@0.9.19:
   version "0.9.19"
   resolved "https://registry.yarnpkg.com/react-scripts-typescript-scss/-/react-scripts-typescript-scss-0.9.19.tgz#c90af5752df3aeb956d1f53787b3f6f4f143a878"
@@ -5388,6 +5410,10 @@ require-uncached@^1.0.2:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+reset-css@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/reset-css/-/reset-css-2.2.0.tgz#57ce1d2e8c28cca656c59385dc484f0cb35c5a1d"
 
 resolve-from@^1.0.0:
   version "1.0.1"

@@ -2,19 +2,36 @@ import './App.scss';
 import * as React from 'react';
 import { Component } from 'react';
 
-class App extends Component<any, any> {
+import * as Modal from 'react-modal';
+
+export default class App extends Component<any, {
+  showModal: boolean
+}> {
+  state = {
+    showModal: false
+  };
+
+  closeModal = () => this.setState({
+    showModal: false
+  })
+
+  openModal = () => this.setState({
+    showModal: true
+  })
+
   render() {
-    return (
-      <div className='App'>
-        <div className='App-header'>
-          <h2>Welcome to React</h2>
-        </div>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    const { showModal } = this.state;
+    return <div className='app'>
+      <Modal
+        isOpen={showModal}
+        onRequestClose={this.closeModal}
+        closeTimeoutMS={300}
+        className='ReactModal__Content'
+        overlayClassName='ReactModal__Overlay'
+        contentLabel=''>
+        test
+      </Modal>
+      <button className='ui-button primary' onClick={this.openModal}>open payment form</button>
+    </div>;
   }
 }
-
-export default App;
