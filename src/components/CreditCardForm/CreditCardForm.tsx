@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Component, Props } from 'react';
 
 import CreditCard from '../CreditCard/CreditCard';
+import CardNumberInput from '../CardNumberInput/CardNumberInput';
 
 interface CreditCardFormProps extends Props<CreditCardForm> {
 
@@ -27,9 +28,18 @@ export default class CreditCardForm extends Component<CreditCardFormProps, {
         firstName='Fake'
         lastName='Fakovich' />
       <form>
-        <input
-          value={this.state.cardNumber}
-          onChange={this.handleNumberInput} />
+        <div className='form-field'>
+          <label htmlFor='card_number'>Enter card number</label>
+          <CardNumberInput
+            value={this.state.cardNumber}
+            onChange={this.handleNumberInput} />
+          <input
+            id='card_number'
+            name='card_number'
+            type='text'
+            value={this.state.cardNumber}
+            onChange={this.handleNumberInput} />
+        </div>
       </form>
     </div>;
   }

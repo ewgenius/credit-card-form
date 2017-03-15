@@ -4,9 +4,20 @@
   flex-flow: column;
 }
 
+@media (max-width: 680px) {
+  .CreditCardForm {
+    form {
+      margin-top: 16px;
+    }
+  }
+}
+
 @media (min-width: 680px) {
   .CreditCardForm {
     flex-flow: row;
+    form {
+      margin-left: 16px;
+    }
   }
 }
 
