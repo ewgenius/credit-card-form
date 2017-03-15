@@ -40,13 +40,11 @@ $holderFontSize: 14px;
   border-radius: 10px;
   border: 1px solid #909090;
   background-color: #a0a0a0;
-  box-shadow: 1px 1px 4px rgba(#000, 0.4);
+  box-shadow: 0px 0px 4px rgba(#000, 0.4);
   font-family: 'Credit-Card';
-  transition: box-shadow, transform ease 0.3s;
-  transform: translate3d(0, 0, 0);
+  transition: box-shadow ease 0.3s;
   &:hover {
-    transform: translate3d(-2px, -2px, 0);
-    box-shadow: 2px 2px 8px rgba(#000, 0.6);
+    box-shadow: 0px 0px 8px rgba(#000, 0.6);
   }
   &.CreditCard__dark {
     border-color: #1f1f10;
@@ -82,7 +80,7 @@ $holderFontSize: 14px;
   }
 }
 
-@media (max-width: 444px) {
+@media (max-width: 480px) {
   .CreditCard {
     width: $cardWidth * $smallRatio;
     height: $cardHeight * $smallRatio;

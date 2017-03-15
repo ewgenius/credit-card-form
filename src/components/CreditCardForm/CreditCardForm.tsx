@@ -8,15 +8,28 @@ interface CreditCardFormProps extends Props<CreditCardForm> {
 
 }
 
-export default class CreditCardForm extends Component<CreditCardFormProps, {}> {
+export default class CreditCardForm extends Component<CreditCardFormProps, {
+  cardNumber?: string
+}> {
+  state = {
+    cardNumber: ''
+  };
+
+  handleNumberInput = (e) => this.setState({
+    cardNumber: e.target.value
+  })
+
   render() {
+    const { cardNumber } = this.state;
     return <div className='CreditCardForm'>
       <CreditCard
-        cardNumber='0000000000000000'
+        cardNumber={cardNumber}
         firstName='Fake'
         lastName='Fakovich' />
       <form>
-        <input />
+        <input
+          value={this.state.cardNumber}
+          onChange={this.handleNumberInput} />
       </form>
     </div>;
   }

@@ -1,3 +1,17 @@
 .CreditCardForm {
+  padding: 64px;
+  display: flex;
+  flex-flow: column;
+}
 
+@media (min-width: 680px) {
+  .CreditCardForm {
+    flex-flow: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .CreditCardForm {
+    padding: 32px;
+  }
 }
