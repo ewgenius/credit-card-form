@@ -1,0 +1,131 @@
+ // ratios
+$normalRatio: 1;
+$smallRatio: 0.842105263157895;
+$smallestRatio: 0.684210526315789;
+
+/*card values*/
+
+$cardWidth: 380px;
+$cardRatio: 0.631578947368421;
+$cardHeight: $cardWidth * $cardRatio;
+$cardLeftPadding: 37px;
+
+/* chip values */
+
+$chipTop: 80px;
+$chipLeft: $cardLeftPadding;
+$chipWidth: 53px;
+$chipHeight: 41px;
+$chipRadius: 8px;
+
+/* number values */
+
+$numberTop: 131px;
+$numberPadding: $cardLeftPadding;
+$numberFontSize: 18px;
+
+/* holder values */
+
+$holderTop: 198px;
+$holderLeft: 30px;
+$holderFontSize: 14px;
+
+/**/
+
+.CreditCard {
+  position: relative;
+  width: $cardWidth;
+  height: $cardWidth * $cardRatio;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #909090;
+  background-color: #a0a0a0;
+  box-shadow: 1px 1px 4px rgba(#000, 0.4);
+  font-family: 'Credit-Card';
+  transition: box-shadow, transform ease 0.3s;
+  transform: translate3d(0, 0, 0);
+  &:hover {
+    transform: translate3d(-2px, -2px, 0);
+    box-shadow: 2px 2px 8px rgba(#000, 0.6);
+  }
+  &.CreditCard__dark {
+    border-color: #1f1f10;
+    background-color: #20211c;
+    color: #fff;
+  }
+  .CreditCard-chip {
+    position: absolute;
+    top: $chipTop;
+    left: $chipLeft;
+    width: $chipWidth;
+    height: $chipHeight;
+    border-radius: $chipRadius;
+    background-color: #fff;
+  }
+  .CreditCard-number {
+    position: absolute;
+    width: 100%;
+    top: $numberTop;
+    padding: 0 $numberPadding;
+    font-size: $numberFontSize;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .CreditCard-holder {
+    position: absolute;
+    top: $holderTop;
+    left: $holderLeft;
+    font-size: $holderFontSize;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 444px) {
+  .CreditCard {
+    width: $cardWidth * $smallRatio;
+    height: $cardHeight * $smallRatio;
+    .CreditCard-chip {
+      top: $chipTop * $smallRatio;
+      left: $chipLeft * $smallRatio;
+      width: $chipWidth * $smallRatio;
+      height: $chipHeight * $smallRatio;
+      border-radius: $chipRadius * $smallRatio;
+    }
+    .CreditCard-number {
+      top: $numberTop * $smallRatio;
+      padding: 0 $numberPadding * $smallRatio;
+      font-size: $numberFontSize * $smallRatio;
+    }
+    .CreditCard-holder {
+      top: $holderTop * $smallRatio;
+      left: $holderLeft * $smallRatio;
+      font-size: $holderFontSize * $smallRatio;
+    }
+  }
+}
+
+@media (max-width: 384px) {
+  .CreditCard {
+    width: $cardWidth * $smallestRatio;
+    height: $cardHeight * $smallestRatio;
+    .CreditCard-chip {
+      top: $chipTop * $smallestRatio;
+      left: $chipLeft * $smallestRatio;
+      width: $chipWidth * $smallestRatio;
+      height: $chipHeight * $smallestRatio;
+      border-radius: $chipRadius * $smallestRatio;
+    }
+    .CreditCard-number {
+      top: $numberTop * $smallestRatio;
+      padding: 0 $numberPadding * $smallestRatio;
+      font-size: $numberFontSize * $smallestRatio;
+    }
+    .CreditCard-holder {
+      top: $holderTop * $smallestRatio;
+      left: $holderLeft * $smallestRatio;
+      font-size: $holderFontSize * $smallestRatio;
+    }
+  }
+}

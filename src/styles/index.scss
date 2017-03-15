@@ -1,10 +1,11 @@
 @import '../../node_modules/reset-css/_reset.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import './fonts.scss';
 
 /* PALETTE */
 
 $colorPrimary: #ffcd33;
-$colorPrimaryDark: #e8c823;
+$colorPrimaryDark: #e8aa23;
 $colorText: #333;
 
 /* MAIN STYLES */
@@ -26,6 +27,12 @@ body,
   outline: none;
 }
 
+.flex-space {
+  flex: 1;
+}
+
+$modalOverlayTransition: 0.3s;
+$modalContentTransition: 0.3s;
 .ReactModalPortal {
   .ReactModal__Overlay {
     position: fixed;
@@ -39,10 +46,9 @@ body,
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all ease 0.3s;
+    transition: background-color ease-in-out $modalOverlayTransition;
     &.ReactModal__Overlay--after-open {
       background-color: rgba(#000, 0.7);
-      //overflow: auto;
     }
     &.ReactModal__Overlay--before-close {
       background-color: rgba(#000, 0);
@@ -54,7 +60,8 @@ body,
       border-radius: 4px;
       padding: 32px;
       transform: translate3d(0, 100vh, 0);
-      transition: transform ease 0.3s;
+      transition: transform ease-in-out $modalContentTransition;
+      box-shadow: 0 1px 4px rgba(#000, 0.4);
       &.ReactModal__Content--after-open {
         transform: translate3d(0, 0, 0);
       }
@@ -65,7 +72,7 @@ body,
   }
 }
 
-.ui-button {
+.button {
   border: 1px solid #f0f0f0;
   border-radius: 4px;
   padding: 16px 32px;
@@ -80,11 +87,13 @@ body,
   }
   &:hover {
     border-color: $colorPrimary;
+    box-shadow: 0 1px 2px rgba(#000, 0.2);
   }
-  &.primary {
+  &.button-primary {
     border-color: $colorPrimary;
     background-color: $colorPrimary;
     &:hover {
+      border-color: $colorPrimaryDark;
       background-color: $colorPrimaryDark;
     }
   }

@@ -6,5 +6,6 @@ Portfolio demo project
 
 - React.js by [Create React App](https://github.com/facebookincubator/create-react-app)
 - Typescript by custom react-scripts [react-scripts-typescript-scss](https://github.com/ewgenius/react-scripts-typescript-scss)
+- [redux-modal](https://github.com/reactjs/react-modal)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

@@ -3,6 +3,8 @@ import * as React from 'react';
 import { Component } from 'react';
 
 import * as Modal from 'react-modal';
+import CreditCardForm from '../CreditCardForm/CreditCardForm';
+import CreditCard from '../CreditCard/CreditCard';
 
 export default class App extends Component<any, {
   showModal: boolean
@@ -21,7 +23,7 @@ export default class App extends Component<any, {
 
   render() {
     const { showModal } = this.state;
-    return <div className='app'>
+    return <div className='App'>
       <Modal
         isOpen={showModal}
         onRequestClose={this.closeModal}
@@ -29,9 +31,22 @@ export default class App extends Component<any, {
         className='ReactModal__Content'
         overlayClassName='ReactModal__Overlay'
         contentLabel=''>
-        test
+        <CreditCardForm />
       </Modal>
-      <button className='ui-button primary' onClick={this.openModal}>open payment form</button>
+      <div className='flex-space' />
+      <CreditCard
+        cardNumber='0000000000000000'
+        firstName='Fake'
+        lastName='Fakovich' />
+      <div className='flex-space' />
+
+      <button className='button button-primary' onClick={this.openModal}>open payment form</button>
+      <div className='flex-space' />
+      <div className='about'>
+        PAYMENT FORM DEMO<br />
+        source: <a href='https://github.com/ewgenius/credit-card-form' target='_blank'>github</a><br />
+        created by <a href='https://ewgenius.info' target='_blank'>Evgeniy Khramkov</a>
+      </div>
     </div>;
   }
 }
