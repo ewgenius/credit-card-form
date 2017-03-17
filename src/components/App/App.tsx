@@ -37,7 +37,9 @@ export default class App extends Component<any, {
       <CreditCard
         cardNumber='0000000000000000'
         firstName='Fake'
-        lastName='Fakovich' />
+        lastName='Fakovich'
+        validMonth='01'
+        validYear='19' />
       <div className='flex-space' />
 
       <button className='button button-primary' onClick={this.openModal}>open payment form</button>

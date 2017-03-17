@@ -16,7 +16,7 @@ $chipTop: 80px;
 $chipLeft: $cardLeftPadding;
 $chipWidth: 53px;
 $chipHeight: 41px;
-$chipRadius: 8px;
+$chipRadius: 10px;
 
 /* number values */
 
@@ -30,6 +30,12 @@ $holderTop: 198px;
 $holderLeft: 30px;
 $holderFontSize: 14px;
 
+/* valid values */
+
+$validTop: 177px;
+$validLeft: 145px;
+$validSpaceBetween: 5px;
+
 /**/
 
 .CreditCard {
@@ -38,10 +44,9 @@ $holderFontSize: 14px;
   height: $cardWidth * $cardRatio;
   box-sizing: border-box;
   border-radius: 10px;
-  border: 1px solid #909090;
-  background-color: #a0a0a0;
+  border: 1px solid #a0a0a0;
+  background-color: #e0e0e0;
   box-shadow: 0px 0px 4px rgba(#000, 0.4);
-  font-family: 'Credit-Card';
   transition: box-shadow ease 0.3s;
   &:hover {
     box-shadow: 0px 0px 8px rgba(#000, 0.6);
@@ -58,7 +63,10 @@ $holderFontSize: 14px;
     width: $chipWidth;
     height: $chipHeight;
     border-radius: $chipRadius;
-    background-color: #fff;
+    background-image: url('../../../assets/credit-card/chip.png');
+    background-size: 100% 100%;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
   }
   .CreditCard-number {
     position: absolute;
@@ -77,6 +85,28 @@ $holderFontSize: 14px;
     left: $holderLeft;
     font-size: $holderFontSize;
     text-transform: uppercase;
+  }
+  .CreditCard-valid {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: $validTop;
+    left: $validLeft;
+    div:first-child {
+      text-align: center;
+      font-size: 8px;
+      margin-right: $validSpaceBetween;
+    }
+    div:last-child {
+      font-size: 10px;
+    }
+  }
+  .CreditCard-holder,
+  .CreditCard-number,
+  .CreditCard-valid div:last-child {
+    font-family: 'Credit-Card';
+    color: #fff;
+    text-shadow: 1px 1px 0px rgba(#000, 1);
   }
 }
 
@@ -101,6 +131,13 @@ $holderFontSize: 14px;
       left: $holderLeft * $smallRatio;
       font-size: $holderFontSize * $smallRatio;
     }
+    .CreditCard-valid {
+      top: $validTop * $smallRatio;
+      left: $validLeft * $smallRatio;
+      div:first-child {
+        margin-right: $validSpaceBetween * $smallRatio;
+      }
+    }
   }
 }
 
@@ -124,6 +161,13 @@ $holderFontSize: 14px;
       top: $holderTop * $smallestRatio;
       left: $holderLeft * $smallestRatio;
       font-size: $holderFontSize * $smallestRatio;
+    }
+    .CreditCard-valid {
+      top: $validTop * $smallestRatio;
+      left: $validLeft * $smallestRatio;
+      div:first-child {
+        margin-right: $validSpaceBetween * $smallRatio;
+      }
     }
   }
 }

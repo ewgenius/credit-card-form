@@ -23,10 +23,6 @@ export default class CreditCardForm extends Component<CreditCardFormProps, {
   render() {
     const { cardNumber } = this.state;
     return <div className='CreditCardForm'>
-      <CreditCard
-        cardNumber={cardNumber}
-        firstName='Fake'
-        lastName='Fakovich' />
       <form>
         <div className='form-field'>
           <label htmlFor='card_number'>Enter card number</label>

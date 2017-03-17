@@ -1,5 +1,5 @@
 @import '../../node_modules/reset-css/_reset.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Roboto+Mono');
 @import './fonts.scss';
 
 /* PALETTE */
@@ -12,7 +12,7 @@ $colorText: #333;
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   color: $colorText;
 }
 
@@ -81,6 +81,7 @@ $modalContentTransition: 0.3s;
   outline: none;
   background-color: #ffffff;
   transition: all ease 0.3s;
+  font-family: 'Roboto Mono';
   &:not(:disabled) {
     cursor: pointer;
   }
