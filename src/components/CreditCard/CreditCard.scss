@@ -35,6 +35,8 @@ $holderFontSize: 14px;
 $validTop: 177px;
 $validLeft: 145px;
 $validSpaceBetween: 5px;
+$validLabelSize: 8px;
+$validFontSize: 10px;
 
 /**/
 
@@ -55,6 +57,14 @@ $validSpaceBetween: 5px;
     border-color: #1f1f10;
     background-color: #20211c;
     color: #fff;
+    .CreditCard-valid div:first-child {
+      color: #fff;
+    }
+    .CreditCard-holder,
+    .CreditCard-number,
+    .CreditCard-valid div:last-child {
+      text-shadow: 1px 1px 0px #777;
+    }
   }
   .CreditCard-chip {
     position: absolute;
@@ -94,11 +104,12 @@ $validSpaceBetween: 5px;
     left: $validLeft;
     div:first-child {
       text-align: center;
-      font-size: 8px;
+      font-size: $validLabelSize;
+      color: #000;
       margin-right: $validSpaceBetween;
     }
     div:last-child {
-      font-size: 10px;
+      font-size: $validFontSize;
     }
   }
   .CreditCard-holder,
@@ -135,7 +146,11 @@ $validSpaceBetween: 5px;
       top: $validTop * $smallRatio;
       left: $validLeft * $smallRatio;
       div:first-child {
+        font-size: $validLabelSize * $smallRatio;
         margin-right: $validSpaceBetween * $smallRatio;
+      }
+      div:last-child {
+        font-size: $validFontSize * $smallRatio;
       }
     }
   }
@@ -166,7 +181,11 @@ $validSpaceBetween: 5px;
       top: $validTop * $smallestRatio;
       left: $validLeft * $smallestRatio;
       div:first-child {
-        margin-right: $validSpaceBetween * $smallRatio;
+        font-size: $validLabelSize * $smallestRatio;
+        margin-right: $validSpaceBetween * $smallestRatio;
+      }
+      div:last-child {
+        font-size: $validFontSize * $smallestRatio;
       }
     }
   }

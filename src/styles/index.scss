@@ -16,6 +16,10 @@ body {
   color: $colorText;
 }
 
+body {
+  min-height: 520px;
+}
+
 html,
 body,
 #root {

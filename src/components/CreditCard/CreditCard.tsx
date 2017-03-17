@@ -46,6 +46,7 @@ const CreditCardHolder = ({ firstName, lastName }: CreditCardHolderProps) => <di
 interface CreditCardProps extends CreditCardNumberProps, CreditCardHolderProps {
   validMonth: string;
   validYear: string;
+  style?: 'light' | 'dark';
 }
 
 const CreditCard = ({
@@ -53,9 +54,11 @@ const CreditCard = ({
   firstName,
   lastName,
   validMonth,
-  validYear
+  validYear,
+  style
 }: CreditCardProps) => {
-  return <div className='CreditCard'>
+  const styleClass = 'CreditCard__' + style;
+  return <div className={`CreditCard ${styleClass}`}>
     <div className='CreditCard-chip' />
     <CreditCardNumber cardNumber={cardNumber} />
     <CreditCardHolder firstName={firstName} lastName={lastName} />

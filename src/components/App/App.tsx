@@ -7,11 +7,16 @@ import CreditCardForm from '../CreditCardForm/CreditCardForm';
 import CreditCard from '../CreditCard/CreditCard';
 
 export default class App extends Component<any, {
-  showModal: boolean
+  showModal?: boolean;
+  cardStyle?: 'light' | 'dark';
 }> {
-  state = {
-    showModal: false
-  };
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+      cardStyle: 'dark'
+    };
+  }
 
   closeModal = () => this.setState({
     showModal: false
@@ -21,8 +26,12 @@ export default class App extends Component<any, {
     showModal: true
   })
 
+  toggleCardStyle = () => this.setState((state) => ({
+    cardStyle: state.cardStyle === 'light' ? 'dark' : 'light'
+  }))
+
   render() {
-    const { showModal } = this.state;
+    const { showModal, cardStyle } = this.state;
     return <div className='App'>
       <Modal
         isOpen={showModal}
@@ -33,13 +42,18 @@ export default class App extends Component<any, {
         contentLabel=''>
         <CreditCardForm />
       </Modal>
+
       <div className='flex-space' />
+
+      <button className='button' style={{ marginBottom: 16 }} onClick={this.toggleCardStyle}>{cardStyle}</button>
+
       <CreditCard
         cardNumber='0000000000000000'
         firstName='Fake'
         lastName='Fakovich'
         validMonth='01'
-        validYear='19' />
+        validYear='19'
+        style={cardStyle} />
       <div className='flex-space' />
 
       <button className='button button-primary' onClick={this.openModal}>open payment form</button>
